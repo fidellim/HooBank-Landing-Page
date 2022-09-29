@@ -2,33 +2,18 @@ import styles from '../style'
 import { discount, robot } from '../assets'
 import GetStarted from './GetStarted'
 import { motion } from 'framer-motion'
-
-const variants = {
-    offscreen: {
-        opacity: 0,
-        scale: 0,
-    },
-    onscreen: {
-        opacity: 1,
-        scale: 1,
-    },
-}
+import { variants } from '../library/framer'
 
 const Hero = () => {
     return (
         <section
             id="home"
-            className={`flex md:flex-row flex-col ${styles.paddingY} xl:py-0 md:min-h-screen xl:justify-center xl:items-center`}
+            className={`flex md:flex-row flex-col ${styles.paddingY} xl:justify-center xl:items-center`}
         >
             <motion.div
                 initial="offscreen"
                 whileInView="onscreen"
-                transition={{
-                    duration: 0.8,
-                    delay: 0.5,
-                    ease: [0, 0.71, 0.2, 1.01],
-                }}
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.5 }}
                 variants={variants}
                 className={`flex-1 ${styles.flexStart} flex-col xl:px-0 sm:px-16 px-6`}
             >
@@ -67,12 +52,7 @@ const Hero = () => {
             <motion.div
                 initial="offscreen"
                 whileInView="onscreen"
-                transition={{
-                    duration: 0.8,
-                    delay: 0.5,
-                    ease: [0, 0.71, 0.2, 1.01],
-                }}
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.5 }}
                 variants={variants}
                 className={`flex-1 flex-col ${styles.flexCenter} md:my-0 my-10 relative`}
             >
@@ -92,12 +72,7 @@ const Hero = () => {
             <motion.div
                 initial="offscreen"
                 whileInView="onscreen"
-                transition={{
-                    duration: 0.8,
-                    delay: 0.5,
-                    ease: [0, 0.71, 0.2, 1.01],
-                }}
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.5 }}
                 variants={variants}
             >
                 <div className={`ss:hidden ${styles.flexCenter}`}>
