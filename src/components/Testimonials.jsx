@@ -1,6 +1,8 @@
 import { feedback } from '../constants'
 import styles from '../style'
 import FeedbackCard from './FeedbackCard'
+import { motion } from 'framer-motion'
+import { variants } from '../library/framer'
 
 const Testimonials = () => (
     <section
@@ -9,7 +11,13 @@ const Testimonials = () => (
     >
         <div className="absolute z-[0] w-[60%] h-[60%] -right-[50%] rounded-full blue__gradient bottom-40" />
 
-        <div className="w-full flex justify-between items-center md:flex-row flex-col sm:mb-16 mb-6 relative z-[1]">
+        <motion.div
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={variants}
+            className="w-full flex justify-between items-center md:flex-row flex-col sm:mb-16 mb-6 relative z-[1]"
+        >
             <h2 className={styles.heading2}>
                 What People are <br className="sm:block hidden" /> saying about
                 us
@@ -20,7 +28,7 @@ const Testimonials = () => (
                     business anywhere on the planet.
                 </p>
             </div>
-        </div>
+        </motion.div>
 
         <div className="flex gap-6 flex-wrap justify-center w-full feedback-container relative z-[1]">
             {feedback.map((card) => (

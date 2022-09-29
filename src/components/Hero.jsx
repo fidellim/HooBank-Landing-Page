@@ -1,14 +1,35 @@
 import styles from '../style'
 import { discount, robot } from '../assets'
 import GetStarted from './GetStarted'
+import { motion } from 'framer-motion'
+
+const variants = {
+    offscreen: {
+        opacity: 0,
+        scale: 0,
+    },
+    onscreen: {
+        opacity: 1,
+        scale: 1,
+    },
+}
 
 const Hero = () => {
     return (
         <section
             id="home"
-            className={`flex md:flex-row flex-col ${styles.paddingY}`}
+            className={`flex md:flex-row flex-col ${styles.paddingY} xl:py-0 md:min-h-screen xl:justify-center xl:items-center`}
         >
-            <div
+            <motion.div
+                initial="offscreen"
+                whileInView="onscreen"
+                transition={{
+                    duration: 0.8,
+                    delay: 0.5,
+                    ease: [0, 0.71, 0.2, 1.01],
+                }}
+                viewport={{ once: true }}
+                variants={variants}
                 className={`flex-1 ${styles.flexStart} flex-col xl:px-0 sm:px-16 px-6`}
             >
                 <div className="flex flex-row items-center py-[6px] px-4 bg-discount-gradient rounded-[10px] mb-2">
@@ -41,15 +62,24 @@ const Hero = () => {
                     credit cards most likely to fit your needs. We examine
                     annual percentage rates, annual fees.
                 </p>
-            </div>
+            </motion.div>
 
-            <div
+            <motion.div
+                initial="offscreen"
+                whileInView="onscreen"
+                transition={{
+                    duration: 0.8,
+                    delay: 0.5,
+                    ease: [0, 0.71, 0.2, 1.01],
+                }}
+                viewport={{ once: true }}
+                variants={variants}
                 className={`flex-1 flex-col ${styles.flexCenter} md:my-0 my-10 relative`}
             >
                 <img
                     src={robot}
                     alt="billing"
-                    className="self-end md:self-auto max-w-lg md:max-w-none w-[100%] h-auto relative z-[5]"
+                    className="self-end max-w-lg w-[100%] h-auto relative z-[5]"
                 />
 
                 {/* gradient start */}
@@ -57,11 +87,23 @@ const Hero = () => {
                 <div className="absolute z-[1] w-[80%] h-[80%] rounded-full white__gradient bottom-40" />
                 <div className="absolute z-[0] w-[50%] h-[50%] right-20 bottom-20 blue__gradient" />
                 {/* gradient end */}
-            </div>
+            </motion.div>
 
-            <div className={`ss:hidden ${styles.flexCenter}`}>
-                <GetStarted />
-            </div>
+            <motion.div
+                initial="offscreen"
+                whileInView="onscreen"
+                transition={{
+                    duration: 0.8,
+                    delay: 0.5,
+                    ease: [0, 0.71, 0.2, 1.01],
+                }}
+                viewport={{ once: true }}
+                variants={variants}
+            >
+                <div className={`ss:hidden ${styles.flexCenter}`}>
+                    <GetStarted />
+                </div>
+            </motion.div>
         </section>
     )
 }

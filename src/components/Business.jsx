@@ -1,6 +1,8 @@
 import { features } from '../constants'
 import styles, { layout } from '../style'
 import Button from './Button'
+import { motion } from 'framer-motion'
+import { variants } from '../library/framer'
 
 const FeatureCard = ({ icon, title, content, index }) => (
     <div
@@ -30,7 +32,13 @@ const FeatureCard = ({ icon, title, content, index }) => (
 
 const Business = () => (
     <section id="features" className={layout.section}>
-        <div className={layout.sectionInfo}>
+        <motion.div
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true, amount: 0.5 }}
+            variants={variants}
+            className={layout.sectionInfo}
+        >
             <h2 className={styles.heading2}>
                 You do the business, <br className="sm:block hidden" /> we’ll
                 handle the money.
@@ -42,13 +50,19 @@ const Business = () => (
             </p>
 
             <Button styles={`mt-10`} />
-        </div>
+        </motion.div>
 
-        <div className={`${layout.sectionImg} flex-col`}>
+        <motion.div
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true, amount: 0.5 }}
+            variants={variants}
+            className={`${layout.sectionImg} flex-col`}
+        >
             {features.map((feature, index) => (
                 <FeatureCard key={feature.id} {...feature} index={index} />
             ))}
-        </div>
+        </motion.div>
     </section>
 )
 

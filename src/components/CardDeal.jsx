@@ -1,10 +1,18 @@
 import { card } from '../assets'
 import styles, { layout } from '../style'
 import Button from './Button'
+import { motion } from 'framer-motion'
+import { variants } from '../library/framer'
 
 const CardDeal = () => (
     <section className={layout.section}>
-        <div className={layout.sectionInfo}>
+        <motion.div
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={variants}
+            className={layout.sectionInfo}
+        >
             <h2 className={styles.heading2}>
                 Find a better card deal <br className="sm:block hidden" /> in
                 few easy steps.
@@ -15,15 +23,21 @@ const CardDeal = () => (
             </p>
 
             <Button styles={`mt-10`} />
-        </div>
+        </motion.div>
 
-        <div className={layout.sectionImg}>
+        <motion.div
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={variants}
+            className={layout.sectionImg}
+        >
             <img
                 src={card}
                 alt="billing"
                 className="md:max-w-none max-w-lg w-[100%] h-auto"
             />
-        </div>
+        </motion.div>
     </section>
 )
 
