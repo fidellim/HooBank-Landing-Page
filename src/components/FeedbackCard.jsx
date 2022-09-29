@@ -1,17 +1,17 @@
 import { quotes } from '../assets'
 
 const FeedbackCard = ({ content, name, title, img }) => (
-    <div className="flex justify-between flex-col px-10 py-12 rounded-[20px]  max-w-[370px] my-5 feedback-card">
+    <div className="flex justify-between flex-col px-10 py-12 rounded-[20px]  max-w-[370px] my-5 feedback-card relative">
         <img
             src={quotes}
             alt="double_quotes"
-            className="w-[42.6px] h-[27.6px] object-contain"
+            className="w-[42.6px] h-[27.6px] object-contain z-10"
         />
-        <p className="font-poppins font-normal text-[18px] leading-[32.4px] text-white my-10">
+        <p className="font-poppins font-normal text-[18px] leading-[32.4px] text-white my-10 z-10">
             {content}
         </p>
 
-        <div className="flex flex-row">
+        <div className="flex flex-row z-10">
             <img
                 src={img}
                 alt={name}
