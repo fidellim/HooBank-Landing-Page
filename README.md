@@ -20,13 +20,14 @@
 
 ### Screenshot
 
-![Solution Desktop]()
-![Solution Mobile]()
+![Solution Desktop](/images/solution_desktop.png)
+
+![Solution Mobile](/images/solution_mobile.png)
 
 ### Links
 
--   Solution URL: [Solution]()
--   Live Site URL: [Live Site]()
+-   Solution URL: [Solution](https://github.com/fidellim/HooBank-Landing-Page)
+-   Live Site URL: [Live Site](https://hoobank-fidellim.netlify.app/)
 
 ## Useful resources
 
