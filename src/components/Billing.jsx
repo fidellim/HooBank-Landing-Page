@@ -44,7 +44,7 @@ const Billing = () => (
             <div className="flex flex-row flex-wrap sm:mt-10 mt-6">
                 <img
                     src={apple}
-                    alt="google_play"
+                    alt="app_store"
                     className="w-[128.86px] h-[42.05px] object-contain mr-5 cursor-pointer"
                 />
                 <img
