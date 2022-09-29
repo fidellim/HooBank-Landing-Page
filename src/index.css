@@ -141,8 +141,14 @@
     opacity: 1;
 }
 
+.social-media,
 .client {
     transition: all 0.35s ease-in-out;
+}
+
+.social-media:hover {
+    filter: invert(85%) sepia(24%) saturate(922%) hue-rotate(130deg)
+        brightness(500%) contrast(100%);
 }
 
 .client:hover {
